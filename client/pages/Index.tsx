@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Mail,
   BarChart3,
@@ -11,7 +11,7 @@ import {
   Send,
   TrendingUp,
   AlertCircle,
-} from 'lucide-react';
+} from "lucide-react";
 
 interface Email {
   id: number;
@@ -39,36 +39,36 @@ interface Insight {
 }
 
 export default function CouncilDashboard() {
-  const [activePage, setActivePage] = useState('home');
-  const [timeFilter, setTimeFilter] = useState('2-weeks');
+  const [activePage, setActivePage] = useState("home");
+  const [timeFilter, setTimeFilter] = useState("2-weeks");
 
   const sentEmails: Email[] = [
     {
       id: 1,
-      title: 'September Pack Meeting Prep',
-      recipient: 'Den Leaders',
-      date: '2026-01-15',
+      title: "September Pack Meeting Prep",
+      recipient: "Den Leaders",
+      date: "2026-01-15",
       count: 47,
     },
     {
       id: 2,
-      title: 'Advancement Deadline Reminder',
-      recipient: 'Cubmasters',
-      date: '2026-01-12',
+      title: "Advancement Deadline Reminder",
+      recipient: "Cubmasters",
+      date: "2026-01-12",
       count: 12,
     },
     {
       id: 3,
-      title: 'Popcorn Sales Kickoff',
-      recipient: 'Committee Chairs',
-      date: '2026-01-08',
+      title: "Popcorn Sales Kickoff",
+      recipient: "Committee Chairs",
+      date: "2026-01-08",
       count: 15,
     },
     {
       id: 4,
-      title: 'New Family Welcome',
-      recipient: 'All Leaders',
-      date: '2026-01-06',
+      title: "New Family Welcome",
+      recipient: "All Leaders",
+      date: "2026-01-06",
       count: 74,
     },
   ];
@@ -76,23 +76,23 @@ export default function CouncilDashboard() {
   const upcomingEmails: Email[] = [
     {
       id: 1,
-      title: 'Blue & Gold Banquet Planning',
-      recipient: 'Cubmasters',
-      scheduled: '2026-01-22',
+      title: "Blue & Gold Banquet Planning",
+      recipient: "Cubmasters",
+      scheduled: "2026-01-22",
       count: 12,
     },
     {
       id: 2,
-      title: 'Tiger Den Activity Ideas',
-      recipient: 'Tiger Den Leaders',
-      scheduled: '2026-01-25',
+      title: "Tiger Den Activity Ideas",
+      recipient: "Tiger Den Leaders",
+      scheduled: "2026-01-25",
       count: 8,
     },
     {
       id: 3,
-      title: 'Recharter Reminder',
-      recipient: 'Committee Chairs',
-      scheduled: '2026-01-28',
+      title: "Recharter Reminder",
+      recipient: "Committee Chairs",
+      scheduled: "2026-01-28",
       count: 15,
     },
   ];
@@ -100,56 +100,56 @@ export default function CouncilDashboard() {
   const changeRequests: ChangeRequest[] = [
     {
       id: 1,
-      requester: 'Pack 245',
-      change: 'Update Cubmaster email',
-      from: 'john@email.com',
-      to: 'sarah@email.com',
-      date: '2026-01-17',
+      requester: "Pack 245",
+      change: "Update Cubmaster email",
+      from: "john@email.com",
+      to: "sarah@email.com",
+      date: "2026-01-17",
     },
     {
       id: 2,
-      requester: 'Pack 112',
-      change: 'Add new Den Leader',
-      to: 'mike@email.com',
-      date: '2026-01-16',
+      requester: "Pack 112",
+      change: "Add new Den Leader",
+      to: "mike@email.com",
+      date: "2026-01-16",
     },
     {
       id: 3,
-      requester: 'Pack 387',
-      change: 'Remove Committee Chair',
-      from: 'lisa@email.com',
-      date: '2026-01-15',
+      requester: "Pack 387",
+      change: "Remove Committee Chair",
+      from: "lisa@email.com",
+      date: "2026-01-15",
     },
   ];
 
   const insights: Insight[] = [
     {
-      label: 'Avg. Open Rate',
-      value: '67%',
-      trend: '+5%',
+      label: "Avg. Open Rate",
+      value: "67%",
+      trend: "+5%",
       icon: Mail,
     },
-    { label: 'Active Recipients', value: '428', trend: '+12', icon: Users },
-    { label: 'Emails This Month', value: '18', trend: '+3', icon: Send },
+    { label: "Active Recipients", value: "428", trend: "+12", icon: Users },
+    { label: "Emails This Month", value: "18", trend: "+3", icon: Send },
     {
-      label: 'Engagement Score',
-      value: '8.4/10',
-      trend: '+0.3',
+      label: "Engagement Score",
+      value: "8.4/10",
+      trend: "+0.3",
       icon: TrendingUp,
     },
   ];
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'emails', label: 'Emails', icon: Mail },
-    { id: 'insights', label: 'Insights', icon: BarChart3 },
+    { id: "home", label: "Home", icon: Home },
+    { id: "emails", label: "Emails", icon: Mail },
+    { id: "insights", label: "Insights", icon: BarChart3 },
   ];
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
-    return date.toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
     });
   };
 
@@ -172,8 +172,8 @@ export default function CouncilDashboard() {
                 onClick={() => setActivePage(item.id)}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-2 transition-all duration-200 ${
                   isActive
-                    ? 'bg-white text-blue-900 font-semibold shadow-md'
-                    : 'text-blue-100 hover:bg-blue-700'
+                    ? "bg-white text-blue-900 font-semibold shadow-md"
+                    : "text-blue-100 hover:bg-blue-700"
                 }`}
               >
                 <Icon size={20} />
@@ -185,11 +185,11 @@ export default function CouncilDashboard() {
 
         <div className="p-4 border-t border-blue-700">
           <button
-            onClick={() => setActivePage('settings')}
+            onClick={() => setActivePage("settings")}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
-              activePage === 'settings'
-                ? 'bg-white text-blue-900 font-semibold shadow-md'
-                : 'text-blue-100 hover:bg-blue-700'
+              activePage === "settings"
+                ? "bg-white text-blue-900 font-semibold shadow-md"
+                : "text-blue-100 hover:bg-blue-700"
             }`}
           >
             <Settings size={20} />
@@ -200,7 +200,7 @@ export default function CouncilDashboard() {
 
       {/* Main Content */}
       <main className="flex-1 overflow-auto">
-        {activePage === 'home' && (
+        {activePage === "home" && (
           <div className="p-8">
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-slate-900">
@@ -263,7 +263,10 @@ export default function CouncilDashboard() {
                 </div>
                 <div className="divide-y divide-slate-200">
                   {sentEmails.map((email) => (
-                    <div key={email.id} className="p-6 hover:bg-slate-50 transition">
+                    <div
+                      key={email.id}
+                      className="p-6 hover:bg-slate-50 transition"
+                    >
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <h4 className="font-semibold text-slate-900">
@@ -292,7 +295,10 @@ export default function CouncilDashboard() {
                 </div>
                 <div className="divide-y divide-slate-200">
                   {upcomingEmails.map((email) => (
-                    <div key={email.id} className="p-6 hover:bg-slate-50 transition">
+                    <div
+                      key={email.id}
+                      className="p-6 hover:bg-slate-50 transition"
+                    >
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <h4 className="font-semibold text-slate-900">
@@ -322,7 +328,10 @@ export default function CouncilDashboard() {
               </div>
               <div className="divide-y divide-slate-200">
                 {changeRequests.map((request) => (
-                  <div key={request.id} className="p-6 hover:bg-slate-50 transition">
+                  <div
+                    key={request.id}
+                    className="p-6 hover:bg-slate-50 transition"
+                  >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
@@ -335,7 +344,7 @@ export default function CouncilDashboard() {
                         </div>
                         <p className="text-sm text-slate-600 mt-2">
                           {request.from && `From: ${request.from}`}
-                          {request.from && request.to && ' → '}
+                          {request.from && request.to && " → "}
                           {request.to && `To: ${request.to}`}
                         </p>
                       </div>
@@ -360,19 +369,25 @@ export default function CouncilDashboard() {
           </div>
         )}
 
-        {activePage === 'emails' && (
+        {activePage === "emails" && (
           <div className="p-8">
-            <h2 className="text-3xl font-bold text-slate-900">Email Management</h2>
+            <h2 className="text-3xl font-bold text-slate-900">
+              Email Management
+            </h2>
             <div className="mt-8 bg-white rounded-lg shadow-sm border border-slate-200 p-12 text-center">
               <Mail size={48} className="mx-auto text-slate-300 mb-4" />
-              <p className="text-slate-600">Email management interface coming soon</p>
+              <p className="text-slate-600">
+                Email management interface coming soon
+              </p>
             </div>
           </div>
         )}
 
-        {activePage === 'insights' && (
+        {activePage === "insights" && (
           <div className="p-8">
-            <h2 className="text-3xl font-bold text-slate-900">Insights & Analytics</h2>
+            <h2 className="text-3xl font-bold text-slate-900">
+              Insights & Analytics
+            </h2>
             <div className="mt-8 bg-white rounded-lg shadow-sm border border-slate-200 p-12 text-center">
               <BarChart3 size={48} className="mx-auto text-slate-300 mb-4" />
               <p className="text-slate-600">Detailed insights coming soon</p>
@@ -380,9 +395,11 @@ export default function CouncilDashboard() {
           </div>
         )}
 
-        {activePage === 'settings' && (
+        {activePage === "settings" && (
           <div className="p-8">
-            <h2 className="text-3xl font-bold text-slate-900">Account Settings</h2>
+            <h2 className="text-3xl font-bold text-slate-900">
+              Account Settings
+            </h2>
             <div className="mt-8 bg-white rounded-lg shadow-sm border border-slate-200 p-12 text-center">
               <Settings size={48} className="mx-auto text-slate-300 mb-4" />
               <p className="text-slate-600">Settings interface coming soon</p>
